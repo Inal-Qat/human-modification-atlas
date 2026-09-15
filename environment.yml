@@ -1,0 +1,15 @@
+name: human-modification-atlas
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - matplotlib
+  - rioxarray
+  - rasterio
+  - xarray
+  - geopandas
+  - numpy
+  - pandas
+  - pydeck
+

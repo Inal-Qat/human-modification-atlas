@@ -8,7 +8,11 @@ The project uses the Global Human Modification dataset to explore how human pres
 
 🚧 Work in progress
 
-The current implementation focuses on raster data auditing and regional exploration. A global interactive visualization and comparative regional analysis will be developed in later stages.
+The project has progressed from local and regional raster auditing to global-scale exploration of the 2022 Human Modification raster.
+
+The current implementation includes remote Cloud-Optimized GeoTIFF access, overview-aware global downsampling, and experiments comparing resampling strategies for efficient whole-Earth visualization.
+
+The next phase focuses on explicit missing-value handling, global area-weighted analysis, and interactive visualization.
 
 ## Current Features
 
@@ -26,6 +30,12 @@ The current implementation focuses on raster data auditing and regional explorat
   - High
   - Very high
 - Initial regional analysis over a central Germany sample window
+- Global-scale downsampling of the ~9 GB `AA` raster without downloading the full dataset
+- Inspection and use of COG overview pyramids (`2×`, `4×`, `8×`, `16×`, `32×`)
+- Comparison of manually selected 2:1 global display grids with overview-derived resolutions
+- Nearest-neighbour vs. average resampling experiments
+- Analysis of `NaN` propagation and missing-value behavior during raster resampling
+- Memory-efficient global raster representation (~32–33 MB in memory)
 
 ## Dataset
 
@@ -64,9 +74,14 @@ human-modification-atlas/
 └── README.md
 ```
 
-## Next Steps 
+## Next Steps
 
-The next stages will expand the analysis from regional raster samples toward global and cross-regional comparisons, followed by an interactive geospatial visualization.
+- Implement NaN-aware global resampling
+- Calculate rigorous global Human Modification distributions
+- Account for unequal pixel area in EPSG:4326 through area weighting
+- Compare modification patterns across selected world regions
+- Build an interactive global visualization with PyDeck
+- Produce a polished final visualization suitable for portfolio and LinkedIn use
 
-The goal is to investigate the data first and let the final visual story emerge from the analysis rather than starting from a predetermined conclusion.
+The project continues to follow an exploratory approach: methodological decisions are tested against the data rather than chosen only for visual appearance.
 
